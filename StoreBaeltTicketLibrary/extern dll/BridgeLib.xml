@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BridgeLib</name>
+    </assembly>
+    <members>
+        <member name="T:BridgeLib.Car">
+            <summary>
+            Repræsenterer en bil i billetsystemet.
+            </summary>
+        </member>
+        <member name="M:BridgeLib.Car.Price">
+            <summary>
+            Returnerer prisen for en bil, som er fastsat til 230 kr.
+            </summary>
+            <returns>Prisen af for en bil.</returns>
+        </member>
+        <member name="M:BridgeLib.Car.VehicleType">
+            <summary>
+            Returnerer køretøjstypen som "Car".
+            </summary>
+            <returns>Strengen "Car".</returns>
+        </member>
+        <member name="T:BridgeLib.MC">
+            <summary>
+            Repræsenterer en motorcykel i billetsystemet.
+            </summary>
+        </member>
+        <member name="M:BridgeLib.MC.Price">
+            <summary>
+            Returnerer prisen for en motorcykel, som er fastsat til 120 kr.
+            </summary>
+            <returns>Prisen for en motorcykel.</returns>
+        </member>
+        <member name="M:BridgeLib.MC.VehicleType">
+            <summary>
+            Returnerer køretøjstypen som "MC".
+            </summary>
+            <returns>Strengen "MC".</returns>
+        </member>
+        <member name="T:BridgeLib.Vehicle">
+            <summary>
+            Abstrakt baseklasse for alle køretøjer i billetsystemet.
+            </summary>
+        </member>
+        <member name="P:BridgeLib.Vehicle.Licenseplate">
+            <summary>
+            Nummerpladen for køretøjet.
+            </summary>
+        </member>
+        <member name="P:BridgeLib.Vehicle.Date">
+            <summary>
+            Datoen for passage.
+            </summary>
+        </member>
+        <member name="M:BridgeLib.Vehicle.Price">
+            <summary>
+            Returnerer prisen for køretøjet.
+            </summary>
+            <returns>Prisen som double.</returns>
+        </member>
+        <member name="M:BridgeLib.Vehicle.VehicleType">
+            <summary>
+            Returnerer køretøjstypen.
+            </summary>
+            <returns>Køretøjstypen som streng.</returns>
+        </member>
+    </members>
+</doc>
