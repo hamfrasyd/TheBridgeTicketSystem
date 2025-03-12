@@ -55,6 +55,7 @@ namespace TcpServer
         {
             StreamReader reader = new StreamReader(socket.GetStream());
             StreamWriter writer = new StreamWriter(socket.GetStream()) { AutoFlush = true };
+            writer.AutoFlush = true;
 
             try
             {
@@ -133,9 +134,9 @@ namespace TcpServer
                 throw new ArgumentException("Please send exactly two numbers");
             }
 
-            int[] tallene = { int.Parse(numbers[0]), int.Parse(numbers[1]) };
+            int[] theTwoNumbers = { int.Parse(numbers[0]), int.Parse(numbers[1]) };
 
-            return tallene;
+            return theTwoNumbers;
         }
 
         /// <summary>
