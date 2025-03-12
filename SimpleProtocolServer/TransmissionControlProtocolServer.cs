@@ -1,12 +1,17 @@
-﻿using System.Net.Sockets;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Sockets;
 using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TcpServer
+namespace SimpleProtocolServer
 {
     /// <summary>
     /// Represents a TCP server handling basic mathematical operations and random number generation.
     /// </summary>
-    public class TcpServer
+    public class TransmissionControlProtocolServer
     {
         private readonly int PORTNUMMER;
         private readonly string NAME;
@@ -16,7 +21,7 @@ namespace TcpServer
         /// </summary>
         /// <param name="port">The port number to listen on (default: 7).</param>
         /// <param name="name">The name of the server (default: "Dummy Server").</param>
-        public TcpServer(int port = 7, string name = "Dummy Server")
+        public TransmissionControlProtocolServer(int port = 7, string name = "Dummy Server")
         {
             PORTNUMMER = port;
             NAME = name;
