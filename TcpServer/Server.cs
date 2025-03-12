@@ -56,14 +56,16 @@ namespace TcpServer
             StreamReader reader = new StreamReader(socket.GetStream());
             StreamWriter writer = new StreamWriter(socket.GetStream()) { AutoFlush = true };
             writer.AutoFlush = true;
-
             try
             {
+                // 0. Write command
+                SendResponse(writer, "Write command: 'add', 'subtract' or 'random'");
+
                 // 1. Read command
                 string command = ReadCommand(reader);
 
                 // 2. Ask for a number
-                SendResponse(writer, "Input numbers");
+                SendResponse(writer, "Input numbers: [num1] [mellemrum] [num 2]");
 
                 // 3. Read the numbers
                 int[] numbers = ReadNumbers(reader);
@@ -110,6 +112,7 @@ namespace TcpServer
         private static void SendResponse(StreamWriter writer, string message)
         {
             writer.WriteLine(message);
+
         }
 
 
@@ -131,7 +134,7 @@ namespace TcpServer
 
             if (numbers.Length != 2)
             {
-                throw new ArgumentException("Please send exactly two numbers");
+                throw new ArgumentException("Please send exactly two seperate numbers (seperated  by a space ' ')");
             }
 
             int[] theTwoNumbers = { int.Parse(numbers[0]), int.Parse(numbers[1]) };
@@ -158,7 +161,7 @@ namespace TcpServer
                     return (tal1 - tal2).ToString();
                 case "random":
                     Random random = new Random();
-                    return random.Next(0, 100).ToString();
+                    return random.Next(tal1, tal2).ToString();
                 default:
                     throw new ArgumentException("Unknown command");
             }
