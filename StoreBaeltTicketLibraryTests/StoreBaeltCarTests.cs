@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StoreBaeltTicketLibrary;
+using StoreBaeltTicketLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
