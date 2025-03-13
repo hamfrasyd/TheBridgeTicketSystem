@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BridgeLib.Models
+﻿namespace BridgeLib.Models
 {
     /// <summary>
     /// Abstract base class for all vehicles in the ticketing system.

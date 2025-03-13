@@ -1,5 +1,4 @@
-﻿using JsonTcPServer;
-
+﻿using JsonTcpServer.Servers;
 namespace JsonTcpServer
 {
     internal class Program

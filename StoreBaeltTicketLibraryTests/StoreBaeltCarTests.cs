@@ -1,10 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StoreBaeltTicketLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StoreBaeltTicketLibrary.Models;
 
 namespace StoreBaeltTicketLibrary.Tests
 {
