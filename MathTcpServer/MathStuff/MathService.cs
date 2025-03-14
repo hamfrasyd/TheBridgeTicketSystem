@@ -1,20 +1,19 @@
 ﻿namespace MathTcpServer.MathStuff
 {
+    /// <summary>
+    /// Provides methods for performing mathematical operations.
+    /// </summary>
     public static class MathService
     {
-        /// <summary>
+        /// /// <summary>
         /// Calculates the result of a mathematical operation based on the specified command and numbers.
         /// Supported operations are: "add", "subtract", and "random".
         /// </summary>
-        /// <param name="command">The mathematical command to perform (e.g., "add").</param>
+        /// <param name="command">The mathematical command to perform (e.g., "add", "subtract", "random").</param>
         /// <param name="num1">The first number for the calculation.</param>
         /// <param name="num2">The second number for the calculation.</param>
-        /// <returns>
-        /// The result of the calculation as a string.
-        /// </returns>
-        /// <exception cref="ArgumentException">
-        /// Thrown when an unknown command is provided.
-        /// </exception>
+        /// <returns>The result of the calculation as an <see cref="int"/>.</returns>
+        /// <exception cref="ArgumentException">Thrown when an unknown command is provided.</exception>
         public static int Calculate(string command, int num1, int num2)
         {
             switch (command.ToLower())
@@ -28,10 +27,10 @@
                     int lower = Math.Min(num1, num2);
                     int upper = Math.Max(num1, num2);
 
-                    // random.Next er eksklusiv for øvre grænse, så vi tilføjer 1 for at inkludere den
-                    return random.Next(lower, upper + 1);
+                // random.Next is exclusive of the upper bound; adding 1 includes it.
+                return random.Next(lower, upper + 1);
                 default:
-                    throw new ArgumentException("Ukendt kommando: " + command);
+                    throw new ArgumentException("Unknown command: " + command);
             }
         }
     }
