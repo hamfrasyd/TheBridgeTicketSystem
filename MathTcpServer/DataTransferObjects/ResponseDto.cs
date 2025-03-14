@@ -14,5 +14,16 @@
         /// Gets or sets the error message if an error occurred.
         /// </summary>
         public string? Error { get; set; }
+
+        /// <summary>
+        /// Returns a string that represents the current response.
+        /// </summary>
+        /// <returns>
+        /// A formatted string containing the result and error message (if there is any).
+        /// </returns>
+        public override string ToString()
+        {
+            return $"Result: {Result},  Error: {Error}";
+        }
     }
 }

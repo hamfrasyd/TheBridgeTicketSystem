@@ -18,7 +18,7 @@ namespace MathTcpServer.Protocols
             writer.WriteLine("Write Method: 'add', 'subtract' or 'random'");   // 0 Ask for method
             string method = reader.ReadLine();                                 // 1 Read method
             
-            writer.WriteLine("Input numbers: [first number] [space] [second number]");         // 2  Ask for numbers
+            writer.WriteLine("Input numbers e.g: [first number] [space] [second number]");         // 2  Ask for numbers
             string numbers = reader.ReadLine();                                // 3 Read the numbers
 
             string[] choppedNumbers = numbers.Split(' ');

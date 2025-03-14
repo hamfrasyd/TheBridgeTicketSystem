@@ -19,5 +19,16 @@
         /// Gets or sets the second number for the math operation.
         /// </summary>
         public int SecondNumber { get; set; }
+
+        /// <summary>
+        /// Returns a string that represents the current request.
+        /// </summary>
+        /// <returns>
+        /// A formatted string containing the method name, the first number, and the second number.
+        /// </returns>
+        public override string ToString()
+        {
+            return $"Method: {Method}, First Number: {FirstNumber}, Second Number {SecondNumber}";
+        }
     }
 }

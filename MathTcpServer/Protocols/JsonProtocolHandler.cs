@@ -1,4 +1,5 @@
 ﻿using MathTcpServer.DataTransferObjects;
+using Microsoft.VisualBasic.FileIO;
 using System.Text.Json;
 
 namespace MathTcpServer.Protocols
@@ -8,6 +9,12 @@ namespace MathTcpServer.Protocols
     /// </summary>
     public class JsonProtocolHandler : IProtocolHandler
     {
+        private readonly JsonSerializerOptions _options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = true // Optional for readable JSON
+        };
+
         /// <summary>
         /// Reads a JSON formatted request from the stream.
         /// </summary>
@@ -18,7 +25,8 @@ namespace MathTcpServer.Protocols
         public RequestDto ReadRequest(StreamReader reader, StreamWriter writer)
         {
             //{"Method":"Random","FirstNumber":10,"SecondNumber":20}
-            writer.Write("Write input in JSON Format e.g. ");
+            writer.Write("Write input in JSON Format. ");
+            writer.WriteLine("Input is case sensitive  e.g. ");
             writer.WriteLine(JsonSerializer.Serialize(new RequestDto { Method = "Random", FirstNumber = 10, SecondNumber = 20 }));
 
             string? json = reader.ReadLine();
@@ -49,7 +57,7 @@ namespace MathTcpServer.Protocols
         /// <param name="response">The <see cref="ResponseDto"/> to send as a response.</param>
         public void WriteResponse(StreamWriter writer, ResponseDto response)
         {
-            string json = JsonSerializer.Serialize(response);
+            string json = JsonSerializer.Serialize(response, _options);
             writer.WriteLine(json);
         }
     }
